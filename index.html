@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS-Agent遥感多模态智能体使用帮助文档</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            width: 65%; /* 页面宽度为60% */
+            margin-left: auto;
+            margin-right: auto; /* 自动左右居中 */
+        }
+        .container {
+            max-width: auto;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        /* 大标题居中 */
+        h1 {
+            text-align: center;
+        }
+        .nav {
+            background:  #54aef3;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 6px;
+            display: inline-block;
+            font-size: 20px;  /* 增加目录文字大小 */
+        }
+        .nav a:hover {
+            background: #54aef3;
+            border-radius: 5px;
+        }
+        .section {
+            display: flex;
+        }
+        .left {
+            width: 40%;
+            padding: 10px;
+        }
+        .right {
+            width: 60%;
+            padding: 10px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        /* 标题样式 */
+        .section-title {
+            background-color: #54aef3;  /* 浅蓝色背景 */
+            color: white;
+            padding: 5px 15px;  /* 减少内边距 */
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        p {
+            background-color: #ffffff;  /* 设置背景颜色 */
+            color: #333;  /* 设置字体颜色 */
+            padding: 10px;  /* 添加内边距，增加可读性 */
+            border-radius: 5px;  /* 可选，设置圆角 */
+            font-size: 18px;
+            text-align: justify;  /* 两端对齐 */
+            font-weight: bold;  /* 加粗字体 */
+        }
+
+        /* 底部版权信息 */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: hsla(0, 0%, 100%, 0.56);
+            color: black;
+            font-size: 14px;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RS-Agent遥感多模态智能体使用帮助文档</h1>
+        <div class="nav">
+            <a href="#intro">平台介绍</a>
+            <a href="#layout">布局介绍</a>
+            <a href="#example">样例使用</a>
+            <a href="#task">具体任务示例</a>
+        </div>
+        
+        <h2 id="intro" class="section-title">平台介绍</h2>
+        <p>RS-Agent（遥感智能体）是一个基于qwen-2.5模型的智能助手，专注于遥感图像处理任务。它能够处理多种遥感任务，包括移动目标检测、飞机检测、计数与识别、道路网络提取、建筑物提取、灾后建筑评估、目标检测、超分辨率、去噪等。
+           RS-Agent由北京邮电大学智能感知与认知组（IntelliSense@BUPT）开发，致力于为遥感领域提供高效的智能分析和数据处理服务。
+           您可以通过RS-Agent高效调用工具并根据用户需求提供精准答案，支持多轮对话和任务执行。每次响应都会根据上下文理解用户意图，提供最合适准确的回答。
+           更多信息请访问：<a href="https://www.zhihu.com/people/IntelliSense"
+           style="color:#008AD7;font-weight:normal;">IntelliSense@BUPT</a></p>
+        
+        <h2 id="layout" class="section-title">布局介绍</h2>
+        <p>① 上传图像组件：点击该组件即可选择本地文件进行上传<br>
+                   ② 聊天框：您的问题与RS-Agent的回答会显示在这里<br>
+                   ③ 问题输入框：在此处输入您的问题<br>
+                   ④ 样例：该部分由RS-Agent开发团队提供，方便您快速了解RS-Agent的强大功能<br>
+                   ⑤ 按钮功能：点击“发送”即可发送您的问题（也可以点击Enter键发送）；点击“显示（隐藏）扩展图像框”会弹出第二个上传图像组件，用于需要上传两张图像进行比对的任务；点击“清空聊天”按钮即可清空当前聊天记录</p>
+        <img src="https://rs-agent-images.oss-cn-beijing.aliyuncs.com/logos/webscreenshot.png" alt="前端界面截图" style="max-width: 100%; border-radius: 5px;">
+        
+        <h2 id="example" class="section-title">样例使用</h2>
+        <p>1. 选择样例中一个您感兴趣的任务类型（例如第一个问题）<br>2. 点击图片或文字，将会自动进行上传图片和输入问题工作（如右图所示）。<br>3. 点击发送，RS-Agent便会接收到您的问题并进行回答</p>
+        <img src="https://rs-agent-images.oss-cn-beijing.aliyuncs.com/logos/example.png" alt="样例使用截图">
+            
+        
+        <h2 id="task" class="section-title">具体任务示例</h2>
+        <p>示例任务1：假设用户想了解一张图像里面的建筑物分布情况<br>1. 点击上传图像组件，在本地文件夹中找到需要处理的图像并上传<br>2. 在文本输入框输入：“我想了解这张图片里的建筑物分布情况”<br>3. 点击发送，静待片刻，RS-Agent则会为您标注出上传图像中的建筑物</p>
+        <img src="https://rs-agent-images.oss-cn-beijing.aliyuncs.com/logos/3.png" alt="具体任务示例截图">
+        <p>示例任务2(多图片场景)：假设用户想了解一个区域经历一场灾害后的建筑损毁情况<br>1. 点击左上角上传图像组件，在本地文件夹中找到该区域受灾前后的图像之一并上传<br>2. 点击“显示（隐藏）扩展图像框”，点击原图传组件下方弹出的新的图传组件，在本地文件夹中找到该区域受灾前后的另一张图像并上传<br>3. 在文本输入框输入：“我想知道这个地方地震后的建筑物损毁情况”<br>4. 点击发送，静待片刻，RS-Agent则会比对两张图像的建筑物情况，并标注出图像中损毁的建筑物</p>
+        <img src="https://rs-agent-images.oss-cn-beijing.aliyuncs.com/logos/4.png" alt="具体任务示例截图">
+        
+    </div>
+
+    <footer>
+        &copy; 2025 <a href="https://www.zhihu.com/people/IntelliSense" target="_blank">IntelliSense@BUPT</a>. All Rights Reserved.
+    </footer>
+</body>
+</html>
